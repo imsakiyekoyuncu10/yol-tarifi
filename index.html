@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#4F46E5">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https:; img-src 'self' https: data:; connect-src 'self' https:;">
+  
+  <title>Akıllı Rota - Ulaşım Asistanı | İstanbul, Kayseri</title>
+  <meta name="description" content="Akıllı Rota: Konumunuza en yakın metro, tramvay, otobüs duraklarını bulun. İstanbul ve Kayseri için ücretsiz rota planlayıcı.">
+  
+  <meta property="og:title" content="Akıllı Rota - Ulaşım Asistanı">
+  <meta property="og:description" content="En yakın durakları bulun, rota alın, gezilecek yerler keşfedin.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Akıllı Rota">
+  <meta name="twitter:description" content="Ulaşım Asistanı">
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Akıllı Rota</h1>
+      <select id="citySelect">
+        <option value="istanbul">İstanbul</option>
+        <option value="kayseri">Kayseri</option>
+      </select>
+    </header>
+
+    <main id="map"></main>
+
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="spinner"></div>
+      <p>Harita yükleniyor...</p>
+    </div>
+
+    <div class="route-search hidden" id="routeSearch">
+      <input type="text" id="destinationInput" placeholder="Nereye gitmek istiyorsun?" autocomplete="off">
+      <div id="searchResults" class="search-results hidden"></div>
+      <div class="btn-row">
+        <button id="routeBtn" class="btn-primary">Yol Tarifi Al</button>
+      </div>
+      <button id="clearRouteBtn" class="btn-secondary" style="width:100%">Temizle</button>
+    </div>
+
+    <div class="transport-filter hidden" id="transportFilter">
+      <button class="active" data-type="metro">Metro</button>
+      <button class="active" data-type="tram">Tramvay</button>
+      <button class="active" data-type="bus">Otobus</button>
+    </div>
+
+    <div id="infoPanel" class="hidden">
+      <button id="closeInfo">&times;</button>
+      <div id="infoContent"></div>
+    </div>
+
+    <div id="timeSelector" class="hidden">
+      <h3>Ne zaman gezmek istersin?</h3>
+      <div class="time-options">
+        <button data-time="morning">Sabah (06-12)</button>
+        <button data-time="afternoon">Ogleden Sonra (12-18)</button>
+        <button data-time="evening">Aksam (18-23)</button>
+        <button data-time="night">Gece (23-06)</button>
+      </div>
+    </div>
+
+    <nav id="bottomNav">
+      <button class="nav-btn active" data-tab="route">
+        <span class="icon">Yol</span>
+        <span>Yol Tarifi</span>
+      </button>
+      <button class="nav-btn" data-tab="transport">
+        <span class="icon">Durak</span>
+        <span>Ulasim</span>
+      </button>
+      <button class="nav-btn" data-tab="nearby">
+        <span class="icon">Yakin</span>
+        <span>Yakin Duraklar</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>

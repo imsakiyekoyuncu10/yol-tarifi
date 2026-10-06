@@ -1,0 +1,44 @@
+{
+  "name": "Akıllı Rota - Ulaşım Asistanı",
+  "short_name": "Akıllı Rota",
+  "description": "Konumunuza en yakın metro, tramvay, otobüs duraklarını bulun. İstanbul ve Kayseri için ücretsiz rota planlayıcı ve gezilecek yer önerileri.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#4F46E5",
+  "theme_color": "#4F46E5",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "tr",
+  "categories": ["travel", "navigation", "utilities"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Akıllı Rota",
+      "short_name": "Rota",
+      "description": "Konumunuzdan bir yere rota alın",
+      "url": "/?tab=route",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Yakın Duraklar",
+      "short_name": "Duraklar",
+      "description": "En yakın metro, tramvay, otobüs duraklarını görün",
+      "url": "/?tab=nearby",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
